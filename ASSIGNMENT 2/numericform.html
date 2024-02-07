@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMERIC FORM</title>
+    <style>
+        .error-message{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>NUMERIC FORM</h1>
+    <form id="numericForm">
+        <label for="numericInput">Enter a Number:</label>
+        <input type="text" id="numericInput" name="numericInput">
+        <span class="error-message" id="error-message"></span>
+        <br>
+        <button type="button" onclick="validateNumericInput()">submit</button>
+    </form>
+    
+    <script>
+        function validateNumericInput() {
+            var numericInput = document.getElementById('numericInput')
+            var errorMessage = document.getElementById('errorMessage');
+
+            // check if the input is a vaild number using isNaN function
+            if (isNaN(numericInput)) {
+                errorMessage.textContent = "please enter avalid number.";
+            } else {
+                errorMessage.textContent = ""; // clear previous error messages
+                // You can perform other actions or submit the form
+            }
+        }
+    </script>
+</body>
+</html>
